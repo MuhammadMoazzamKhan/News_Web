@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar nav-bg shadow p-2">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light">Today News</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searcher">
+                <button class="btn btn-outline-success search-btn" onclick="search()" type="submit"
+                    id="btn">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="alert alert-danger mt-1 d-flex flex-wrap" role="alert">
+        <div class="btn-group mt-1 mx-2">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Topic's News
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">news</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">world</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">tech</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">finance</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">politics</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">business</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">economics</a></li>
+            </ul>
+        </div>
+        <div class="btn-group mt-1 mx-2">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Topic's entertainment
+            </button>
+            <ul class="dropdown-menu">
+
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">entertainment</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">travel</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">music</a></li>
+            </ul>
+        </div>
+        <div class="btn-group mt-1 mx-2">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Topic's Heath
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">food</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">beauty</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">energy</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">science</a></li>
+            </ul>
+        </div>
+        <div class="btn-group mt-1 mx-2">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Topic's Game
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">gaming</a></li>
+                <li><a class="dropdown-item" href="#" onclick="topics(this)">sport</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content" style="display: none;"></div>
+    <div class="cards d-flex flex-wrap justify-content-center" id="cards">
+    </div>
+
+    <div id="loader" class="loader">
+        <div class="spinner-border text-danger loader-sizing" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="btn-position">
+        <button onclick="loadmore()" type="button" class="btn btn-danger size-btn" style="width: 30%;">See More....</button>
+    </div>
+    <div class="container fixing-footer">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top ">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="#" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0  fs-6 text-light">© 2023,Created By Moazzam</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-center fs-5 list-unstyled d-flex">
+                <li class="ms-3"><a class="text-light" href="https://github.com/MuhammadMoazzamKhan"><i
+                            class="fa-brands fa-github"></i></a></li>
+                <li class="ms-3"><a class="text-light"
+                        href="https://www.linkedin.com/in/muhammad-moazzam-khan-494845279/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B2%2FTc2Ax9RCmWjNM2Hc6RBg%3D%3D"><i
+                            class="fa-brands fa-linkedin"></i></a></li>
+                <li class="ms-3"><a class="text-light" href="mailto:kmoazzamkhan1@gmail.com?"><i
+                            class="fa-sharp fa-solid fa-g"></i></a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+        integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
